@@ -6,9 +6,9 @@
   "scripts": {
     "consumer": "node src/consumerService.js",
     "provider": "node src/providerService.js",
-    "test:consumer": "jest __tests__/contract/consumer --runInBand --setupFiles ./__tests__/helpers/pactSetup.js --setupTestFrameworkScriptFile=./__tests__/helpers/pactTestWrapper.js",
+    "test:consumer": "jest __tests__/contract/consumer --runInBand --setupFiles ./__tests__/contract/helpers/pactSetup.js --setupTestFrameworkScriptFile=./__tests__/contract/helpers/pactTestWrapper.js",
     "test:provider": "jest __tests__/contract/provider --runInBand --force-exit",
-    "publish:contract": "node ./__tests__/helpers/publish.js"
+    "publish:contract": "node ./__tests__/contract/helpers/publish.js"
   },
   "repository": {
     "type": "git",
@@ -30,7 +30,6 @@
   },
   "homepage": "https://github.com/rafaelaazevedo/tau-pact-nodejs-course#readme",
   "devDependencies": {
-    "@pact-foundation/pact": "^9.18.1",
     "axios": "^0.19.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
@@ -40,5 +39,8 @@
   },
   "jest": {
     "testEnvironment": "node"
+  },
+  "dependencies": {
+    "@pact-foundation/pact": "^10.1.2"
   }
 }

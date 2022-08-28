@@ -5,10 +5,11 @@ const path = require("path")
 const Pact = require("@pact-foundation/pact")
 
 global.port = 8081
-global.provider = new Pact({
+global.provider = Pact({
     port: global.port,
-    log: path.resolve(process.cwd, "__tests__/contract/logs", "pact-logs.log"),
-    dir: path.resolve(process.cwd, "__tests__/contract/pacts"),
+    log: path.resolve(process.cwd(), "__tests__/contract/logs", "pact-logs.log"),
+    dir: path.resolve(process.cwd(), "__tests__/contract/pacts"),
+    
     spec: 2,
     logLevel: "INFO",
     pactfileWriteMode: "overwrite",
